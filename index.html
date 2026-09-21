@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101114" />
+  <meta name="description" content="Μια μικρή πρόσκληση για ραντεβού." />
+  <title>Μια μικρή ερώτηση…</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <main class="shell">
+    <section class="card" id="intro">
+      <p class="eyebrow">ένα πολύ σοβαρό mini game</p>
+      <div class="orb" aria-hidden="true"><span>?</span></div>
+      <h1><span id="recipientName">Εσύ</span>, έχω μια μικρή ερώτηση.</h1>
+      <p class="subtitle">Υπόσχομαι ότι παίρνει λιγότερο από ένα λεπτό.</p>
+      <button class="primary" id="startButton">Για να δούμε</button>
+    </section>
+
+    <section class="card hidden" id="question">
+      <p class="step">01 / 01</p>
+      <h2>Θα έβγαινες μαζί μου;</h2>
+      <p class="subtitle" id="dateIdea">Για ένα ποτό και μια καλή κουβέντα — τα υπόλοιπα τα βρίσκουμε.</p>
+      <div class="actions" id="actions">
+        <button class="primary yes" id="yesButton">Ναι, μέσα ✨</button>
+        <button class="secondary no" id="noButton">Όχι</button>
+      </div>
+      <p class="microcopy" id="microcopy" aria-live="polite"></p>
+    </section>
+
+    <section class="card hidden success" id="success">
+      <div class="sparkles" aria-hidden="true"></div>
+      <p class="eyebrow">τέλεια επιλογή</p>
+      <div class="orb success-orb" aria-hidden="true"><span>✓</span></div>
+      <h2>Τι διάθεση έχουμε;</h2>
+      <p class="subtitle">Διάλεξε το πρώτο μας μικρό σχέδιο.</p>
+      <div class="date-options" id="dateOptions">
+        <button class="date-option" data-choice="Καφέ"><span>☕</span><strong>Καφέ</strong></button>
+        <button class="date-option" data-choice="Ποτό ή κρασί"><span>🍷</span><strong>Ποτό / κρασί</strong></button>
+        <button class="date-option" data-choice="Φαγητό"><span>🍽️</span><strong>Φαγητό</strong></button>
+      </div>
+    </section>
+
+    <section class="card hidden final-choice" id="finalChoice">
+      <p class="eyebrow">έχουμε σχέδιο</p>
+      <div class="orb success-orb" aria-hidden="true"><span>✓</span></div>
+      <h2 id="choiceTitle">Καφέ λοιπόν.</h2>
+      <p class="subtitle">Διάλεξε πότε και πρότεινε το μέρος.</p>
+      <form class="plan-form" id="planForm">
+        <label>
+          <span>Ημερομηνία και ώρα</span>
+          <input type="datetime-local" id="dateTime" name="Ημερομηνία και ώρα" required>
+        </label>
+        <label>
+          <span>Μέρος</span>
+          <input type="text" id="place" name="Μέρος" placeholder="Γράψε το μέρος που προτιμάς" maxlength="80" required>
+        </label>
+        <input type="hidden" id="activity" name="Επιλογή">
+        <input type="hidden" name="Από" value="Ειρήνη">
+        <button class="primary" id="submitPlan" type="submit">Κλείσαμε ✨</button>
+      </form>
+      <p class="microcopy" id="submitStatus" aria-live="polite"></p>
+      <button class="text-button" id="changeChoice">Άλλαξε επιλογή</button>
+    </section>
+
+    <section class="card hidden confirmed" id="confirmed">
+      <p class="eyebrow">ραντεβού σε αναμονή</p>
+      <div class="orb success-orb" aria-hidden="true"><span>✓</span></div>
+      <h2>Η πρότασή σου έφυγε.</h2>
+      <p class="subtitle">Τώρα περιμένεις μόνο την τελική επιβεβαίωση 😉</p>
+    </section>
+
+    <section class="card hidden graceful" id="decline">
+      <p class="eyebrow">κανένα πρόβλημα</p>
+      <div class="orb decline-orb" aria-hidden="true"><span>♡</span></div>
+      <h2>Το χιούμορ άξιζε την προσπάθεια.</h2>
+      <p class="subtitle">Χωρίς πίεση — χάρηκα που έφτασες μέχρι εδώ.</p>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
